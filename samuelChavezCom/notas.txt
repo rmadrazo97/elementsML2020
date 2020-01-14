@@ -1,0 +1,14 @@
+pep8 camelCase no -> snake_case si.
+    no funciones ni variables. 
+    solo clases.
+
+map y array comprehension son equivalentes. 
+
+slice notation:
+    revisar notacion: [x: x + 2]
+
+concatenaciones implicitas: 
+print(
+    "hola"
+    "mundo"
+)
