@@ -1,6 +1,7 @@
 pep8 camelCase no -> snake_case si.
     no funciones ni variables. 
     solo clases.
+    lineas cortas no + de 80 caracteres.
 
 map y array comprehension son equivalentes. 
 
@@ -12,3 +13,4 @@ print(
     "hola"
     "mundo"
 )
+
