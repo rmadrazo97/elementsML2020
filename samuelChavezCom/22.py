@@ -12,12 +12,13 @@ Condiciones
 
 import math
 
-coordinates = { 
-    'uno' : (5, 10),
-    'dos' : (10, 10),
-    'tres' : (5, 5),
-    'cuatro' : (10, 5)
+coordinates = {
+    'uno': (5, 10),
+    'dos': (10, 10),
+    'tres': (5, 5),
+    'cuatro': (10, 5)
 }
+
 
 def squareDet(d):
     # distance 1: point1 to point2
@@ -26,22 +27,23 @@ def squareDet(d):
     d2 = distance(d['uno'], d['tres'])
     # distance 3: point1 to point4
     d3 = distance(d['uno'], d['cuatro'])
-    
+
     # if d1 y d2 are equal && d3^2 = 2*d1^2 && (d2-3)^2 = 2*(d2-4)^2  then it is a square
     if d1 == d2 and round(math.pow(d3, 2)) == round(2 * math.pow(d1, 2)) and round(math.pow(distance(d['dos'], d['tres']), 2)) == round(2 * math.pow(distance(d['dos'], d['cuatro']), 2)):
         return True
-    
+
     # if d1 y d2 are equal && d1^2 = 2*d1^2 && (d2-3)^2 = 2*(d2-4)^2  then it is a square
-    if d2 == d3 and round(math.pow(d1,2)) == round(2 * math.pow(d2, 2)) and round(math.pow(distance(d['tres'], d['cuatro']), 2)) == round(2 * math.pow(distance(d['tres'], d['dos']), 2)):
+    if d2 == d3 and round(math.pow(d1, 2)) == round(2 * math.pow(d2, 2)) and round(math.pow(distance(d['tres'], d['cuatro']), 2)) == round(2 * math.pow(distance(d['tres'], d['dos']), 2)):
         return True
     # if d1 y d2 are equal && d2^2 = 2*d1^2 && (d2-3)^2 = 2*(d2-4)^2  then it is a square
-    if d1 == d3 and round(math.pow(d2,2)) == round(2 * math.pow(d1, 2)) and round(math.pow(distance(d['dos'], d['cuatro']), 2)) == round(2 * math.pow(distance(d['dos'], d['tres']), 2)):
+    if d1 == d3 and round(math.pow(d2, 2)) == round(2 * math.pow(d1, 2)) and round(math.pow(distance(d['dos'], d['cuatro']), 2)) == round(2 * math.pow(distance(d['dos'], d['tres']), 2)):
         return True
-    
+
     return False
 
+
 def distance(tuple1, tuple2):
-    return math.sqrt( math.pow( tuple2[0]-tuple1[0], 2 ) + math.pow(tuple2[1]-tuple1[1], 2 ) ) 
+    return math.sqrt(math.pow(tuple2[0]-tuple1[0], 2) + math.pow(tuple2[1]-tuple1[1], 2))
 
 
 print(squareDet(coordinates))
